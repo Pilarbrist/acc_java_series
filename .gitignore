@@ -1,0 +1,10 @@
+**/*.odt
+**/*.class
+**/*.prefs
+**/*.classpath
+**/.metadata
+**/*.project
+**/*.tar
+**/sandbox
+**/RemoteSystemsTempFiles
+
