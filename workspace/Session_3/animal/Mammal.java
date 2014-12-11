@@ -7,5 +7,9 @@ public class Mammal {
 	
 	protected boolean eggs = false;
 
-	// What attributes and behaviors are common to all mammals?
+	// Attributes and behaviors common to all mammals
+	
+	public void hunt() {
+		System.out.println("Mammal hunting");
+	}
 }

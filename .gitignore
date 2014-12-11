@@ -1,4 +1,5 @@
 **/*.odt
+**/*.gitignore
 **/*.class
 **/*.prefs
 **/*.classpath
