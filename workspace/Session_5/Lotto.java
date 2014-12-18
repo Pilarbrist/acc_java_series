@@ -54,8 +54,14 @@ public class Lotto {
 	}
 	
 	private void print_results() {
-		
-		System.out.println("--Lottery drawing report--");
+		// prints a short report of simulation results
+		System.out.println("\n--Lottery Drawing Report--");
+		int i = 0;  // match counter
+		System.out.println("Matches   Count  Percent");
+		for (int next_result : simulator.get_results()) {  // print one line per result
+			System.out.printf("%7s %7s %7.1f%%\n", i++, next_result, 
+					          (next_result/(simulation_years*104.))*100.);
+		}
 	}
 		
 	/**
@@ -67,7 +73,7 @@ public class Lotto {
 		//  -p <integer max ball number> (default 54)
 		//  -y <integer number of years to simulate> (default 1)
 		
-		Lotto lotto = new Lotto();
+		Lotto lotto = new Lotto();  // instantiate ourself 
 
 		System.out.printf("The raw args are: ");
 		for (String arg : args) {
@@ -80,7 +86,7 @@ public class Lotto {
 		options.addOption("y", true, "Years to simulate (default 1)");
 		CommandLineParser parser = new BasicParser();
 
-		try {
+		try {  // protect this code in case of ParseException
 			CommandLine cmd = parser.parse( options, args);
 			if (cmd.hasOption("b")) {
    		        lotto.num_lotto_balls = Integer.parseInt(cmd.getOptionValue("b"));
@@ -92,7 +98,7 @@ public class Lotto {
    		        lotto.simulation_years = Integer.parseInt(cmd.getOptionValue("y"));
 			}
 		}
-		catch (ParseException ex) {
+		catch (ParseException ex) {  // catch the ParseException
 			System.out.println("Sorry...bad args");
 			System.exit(128);
 		}
