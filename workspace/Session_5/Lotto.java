@@ -98,7 +98,7 @@ public class Lotto {
    		        lotto.simulation_years = Integer.parseInt(cmd.getOptionValue("y"));
 			}
 		}
-		catch (ParseException ex) {  // catch the ParseException
+		catch (ParseException ex) {  // catch the ParseException (see cli API)
 			System.out.println("Sorry...bad args");
 			System.exit(128);
 		}
